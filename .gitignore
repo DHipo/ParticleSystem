@@ -11,8 +11,7 @@ CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
 
-/thirdparty/
-!thirdparty/.gitkeep
+/thirdparty*/
 
 /.vs/
 /.vscode/
