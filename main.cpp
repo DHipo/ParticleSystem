@@ -309,6 +309,20 @@ int main()
                         Vector2 impulse = normal * impulseScalar;
                         particle.velocity += impulse / particle.mass;
                         other.velocity -= impulse / other.mass;
+                        
+                        if (particles.size() > 2000) continue;
+
+                        float mass = float(rand() % 4) + 1;
+                        particles.push_back({
+                            {static_cast<float>(rand() % (int) windowSize.x),
+                             static_cast<float>(rand() % (int) windowSize.y)},
+                            {particle.velocity.x,
+                            particle.velocity.y},
+                            {0, 0},
+                            {0, 0},
+                            {20 / mass, 20 / mass},
+                            mass
+                        });
                     }
                 }
             }
